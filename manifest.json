@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Anotador",
+    "version": "1.0",
+    "description": "Anota y comparte tus anotaciones con amigos.",
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
